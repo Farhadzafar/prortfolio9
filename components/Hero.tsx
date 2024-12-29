@@ -1,10 +1,15 @@
-import { FaLocationArrow } from "react-icons/fa6";
+import { useI18n } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
+import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-
 const Hero = () => {
+  const { language } = useI18n();
+  const t = translations[language];
   return (
     <div className="pb-20 pt-36">
       {/**
@@ -43,7 +48,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            {t.heroSubtitle}
           </p>
 
           {/**
@@ -52,13 +57,12 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Crafting Concepts into Flawless User Experiences"
+            words={t.heroTitle}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! We are a team of full-stack developers, designers, and DevOps
-            experts, dedicated to delivering outstanding digital solutions.
+            {t.heroDescription}
           </p>
 
           <a href="#about">
