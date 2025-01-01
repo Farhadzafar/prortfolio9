@@ -1,6 +1,10 @@
 export const translations = {
   en: {
     welcome: "Welcome",
+    about: "About",
+    services: "Services",
+    contact: "Contact",
+    portfolio: "Portfolio",
     description: "A modern web application with language and theme support",
     toggleTheme: "Toggle theme",
     changeLanguage: "Change language",
@@ -11,6 +15,10 @@ export const translations = {
   },
   ar: {
     welcome: "مرحباً",
+    about: "نبذة عنا",
+    services: "الخدمات",
+    contact: "اتصل بنا",
+    portfolio: "محفظة الأعمال",
     description: "تطبيق ويب حديث مع دعم اللغة والسمة",
     toggleTheme: "تبديل السمة",
     changeLanguage: "تغيير اللغة",

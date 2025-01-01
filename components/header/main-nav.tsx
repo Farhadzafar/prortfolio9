@@ -6,13 +6,11 @@ import { cn } from "@/lib/utils";
 
 const routes = [
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-  // { href: "/", label: "Home" },
-  // { href: "/about", label: "About" },
-  // { href: "/projects", label: "Projects" },
-  // { href: "/contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  // { label: "Projects", href: "#projects" },
+  // { label: "Testimonials", href: "#testimonials" },
+  { href: "/contact", label: "Contact" },
+  { href: "/portfolio", label: "Portfolio" },
 ];
 
 interface MainNavProps {
@@ -38,7 +36,9 @@ export function MainNav({ mobile }: MainNavProps) {
             pathname === route.href
               ? "text-foreground font-semibold after:block after:h-0.5 after:bg-foreground after:mt-0.5"
               : "text-foreground/60",
-            mobile && "text-lg"
+            mobile && "text-lg",
+            // Dark mode support
+            "dark:text-white dark:hover:text-white dark:after:bg-white"
           )}
         >
           {route.label}
