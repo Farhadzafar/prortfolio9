@@ -36,10 +36,10 @@ const Hero = () => {
       </div>
 
       {/* Hero content */}
-      <div className="flex justify-center relative my-20 z-10">
+      {/* <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center dark:text-blue-100 text-gray-800 max-w-80">
-            {t.heroSubtitle} {/* Dynamic translation for subtitle */}
+            {t.heroSubtitle}
           </p>
 
           <TextGenerateEffect
@@ -48,7 +48,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl dark:text-gray-300 text-gray-700">
-            {t.heroDescription} {/* Dynamic translation for hero description */}
+            {t.heroDescription} 
           </p>
 
           <a href="#about">
@@ -59,7 +59,7 @@ const Hero = () => {
             />
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -5,7 +5,11 @@ import PhaseList from "./phaseList";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { services, phases } from "@/data"; // Importing projects from data/index.ts
-
+import { useI18n } from "@/lib/i18n";
+import { translations } from "@/lib/translations";
+import { FaLocationArrow } from "react-icons/fa6";
+import MagicButton from "@/components/MagicButton";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import {
   Card,
   CardContent,
@@ -33,11 +37,13 @@ const itemVariants = {
 };
 
 export default function ServicesPage() {
+  const { language } = useI18n();
+  const t = translations[language];
   const [activePhase, setActivePhase] = useState(0);
   return (
     <div className="bg-white dark:bg-black-100">
       <div className="container mx-auto px-4 py-16 md:py-24 dark:bg-black-100">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
@@ -48,7 +54,19 @@ export default function ServicesPage() {
             businesses thrive in the digital age. Our expertise spans across
             various technologies and platforms.
           </p>
-        </motion.div>
+        </motion.div> */}
+
+        <div className="flex justify-center relative my-10 z-10">
+          <div className="max-w-[70vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+            <TextGenerateEffect
+              words={t.ServicesPage.title}
+              className="text-center text-[40px] md:text-5xl lg:text-6xl dark:text-white text-black"
+            />
+            <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl dark:text-gray-300 text-gray-700">
+              {t.ServicesPage.subtitles}
+            </p>
+          </div>
+        </div>
 
         <motion.div
           variants={containerVariants}

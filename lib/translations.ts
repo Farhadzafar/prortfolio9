@@ -1,3 +1,6 @@
+import ServicesPage from "@/app/services/page";
+import { title } from "process";
+
 export const translations = {
   en: {
     header: {
@@ -6,6 +9,11 @@ export const translations = {
       industries: "Industries",
       contact: "Contact",
       switchToArabic: "عربي",
+    },
+    ServicesPage: {
+      title: "Our Services",
+      subtitles:
+        "We provide comprehensive software development solutions to help businesses thrive in the digital age. Our expertise spans across various technologies and platforms.",
     },
     form: {
       contactFormTitle: "Send us a Message",
@@ -106,6 +114,11 @@ export const translations = {
       industries: "الصناعات",
       contact: "اتصل بنا",
       switchToEnglish: "English",
+    },
+    ServicesPage: {
+      title: "خدماتنا",
+      subtitles:
+        "نحن نقدم حلول تطوير برمجيات شاملة لمساعدة الشركات على الازدهار في العصر الرقمي. تتنوع خبرتنا عبر مجموعة متنوعة من التقنيات والمنصات.",
     },
     form: {
       contactFormTitle: "أرسل لنا رسالة",
