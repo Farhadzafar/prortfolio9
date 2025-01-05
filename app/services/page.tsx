@@ -1,14 +1,11 @@
 "use client";
-
+import PhaseCard from "./phaseCard";
+import { IndustriesSection } from "@/components/industries";
+import PhaseList from "./phaseList";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Database,
-  Globe2,
-  Layout,
-  Smartphone,
-  Terminal,
-} from "lucide-react";
+import { services, phases } from "@/data"; // Importing projects from data/index.ts
+
 import {
   Card,
   CardContent,
@@ -16,56 +13,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-const services = [
-  {
-    icon: Globe2,
-    title: "Web Development",
-    description:
-      "Custom web applications built with modern technologies like React, Next.js, and Node.js.",
-    technologies: ["React", "Next.js", "Node.js", "TypeScript", "TailwindCSS"],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description:
-      "Native and cross-platform mobile applications for iOS and Android.",
-    technologies: ["React Native", "Flutter", "iOS", "Android", "PWA"],
-  },
-  {
-    icon: Database,
-    title: "Backend Development",
-    description:
-      "Scalable and secure backend solutions with modern architectures.",
-    technologies: ["Node.js", "Python", "PostgreSQL", "MongoDB", "AWS"],
-  },
-  {
-    icon: Code2,
-    title: "Custom Software",
-    description:
-      "Tailored software solutions for your specific business needs.",
-    technologies: ["Java", "C#", ".NET", "Python", "Microservices"],
-  },
-  {
-    icon: Terminal,
-    title: "DevOps Services",
-    description: "Streamline your development and deployment processes.",
-    technologies: ["Docker", "Kubernetes", "CI/CD", "AWS", "Azure"],
-  },
-  {
-    icon: Layout,
-    title: "UI/UX Design",
-    description:
-      "Beautiful and intuitive user interfaces that enhance user experience.",
-    technologies: [
-      "Figma",
-      "Adobe XD",
-      "Sketch",
-      "User Research",
-      "Prototyping",
-    ],
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -86,6 +33,7 @@ const itemVariants = {
 };
 
 export default function ServicesPage() {
+  const [activePhase, setActivePhase] = useState(0);
   return (
     <div className="bg-white dark:bg-black-100">
       <div className="container mx-auto px-4 py-16 md:py-24 dark:bg-black-100">
@@ -95,7 +43,7 @@ export default function ServicesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-lg">
             We provide comprehensive software development solutions to help
             businesses thrive in the digital age. Our expertise spans across
             various technologies and platforms.
@@ -106,28 +54,28 @@ export default function ServicesPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 dark:bg-black-100"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full hover:shadow-lg transition-shadow dark:bg-black-100 bg-white">
+              <Card className="h-full transition-shadow hover:shadow-lg dark:bg-black-100 bg-white rounded-lg overflow-hidden">
                 <CardHeader>
-                  <div className="w-12 h-12 dark:bg-black-100 bg-white rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl md:text-2xl">
+                  <CardTitle className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-200">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-3">
                     {service.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-xs font-medium"
                       >
                         {tech}
                       </span>
@@ -138,6 +86,25 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </motion.div>
+        <section className="container mx-auto px-4 py-16 md:py-24 bg-white dark:bg-black-100">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <h2 className="text-xl font-semibold text-pink-500 mb-4">
+                  YOUR JOURNEY TO SUCCESS
+                </h2>
+                <PhaseList
+                  activeIndex={activePhase}
+                  onPhaseClick={setActivePhase}
+                />
+              </div>
+              <div className="lg:col-span-8">
+                <PhaseCard {...phases[activePhase]} isActive={true} />
+              </div>
+            </div>
+          </div>
+        </section>
+        <IndustriesSection />
       </div>
     </div>
   );

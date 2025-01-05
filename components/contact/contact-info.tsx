@@ -9,37 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-
-const contactDetails = [
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    details: [
-      "123 Innovation Street",
-      "Kandahar, CA 94043",
-      "Kandahar Afghanistan",
-    ],
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    details: ["+93 (000) 700-6000", "+93 (999) 700-6000"],
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    details: ["info@aftech.com", "support@aftech.com"],
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: [
-      "Monday - Friday: 9:00 AM - 6:00 PM",
-      "Saturday: 10:00 AM - 2:00 PM",
-    ],
-  },
-];
+import { contactDetails } from "@/data";
 
 const containerVariants = {
   hidden: { opacity: 0 },

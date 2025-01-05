@@ -13,8 +13,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Send } from "lucide-react";
+import { useI18n } from "@/lib/i18n"; // Importing the useI18n hook
+import { translations } from "@/lib/translations"; // Importing the translations object
 
 export function ContactForm() {
+  const { language } = useI18n(); // Using language from the i18n hook
+  const t = translations[language]; // Fetching the translations based on the current language
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,10 +39,10 @@ export function ContactForm() {
       <Card className="backdrop-blur-sm bg-white dark:bg-black-100">
         <CardHeader>
           <CardTitle className="text-black dark:text-white">
-            Send us a Message
+            {t.form.contactFormTitle}
           </CardTitle>
           <CardDescription className="text-black dark:text-white">
-            Fill out the form below and we'll get back to you shortly.
+            {t.form.contactFormDescription}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -46,14 +50,14 @@ export function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Input
-                  placeholder="First Name"
+                  placeholder={t.form.firstName}
                   required
                   className="bg-white dark:bg-black-100 text-black dark:text-white"
                 />
               </div>
               <div className="space-y-2">
                 <Input
-                  placeholder="Last Name"
+                  placeholder={t.form.lastName}
                   required
                   className="bg-white dark:bg-black-100 text-black dark:text-white"
                 />
@@ -62,31 +66,31 @@ export function ContactForm() {
             <div className="space-y-2">
               <Input
                 type="email"
-                placeholder="Email"
+                placeholder={t.form.email}
                 required
                 className="bg-white dark:bg-black-100 text-black dark:text-white"
               />
             </div>
             <div className="space-y-2">
               <Input
-                placeholder="Subject"
+                placeholder={t.form.subject}
                 required
                 className="bg-white dark:bg-black-100 text-black dark:text-white"
               />
             </div>
             <div className="space-y-2">
               <Textarea
-                placeholder="Your Message"
+                placeholder={t.form.message}
                 required
                 className="min-h-[150px] bg-white dark:bg-black-100 text-black dark:text-white"
               />
             </div>
             <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting ? (
-                "Sending..."
+                t.form.sending
               ) : (
                 <>
-                  Send Message
+                  {t.form.sendButton}
                   <Send className="ml-2 h-4 w-4" />
                 </>
               )}
