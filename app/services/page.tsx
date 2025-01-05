@@ -43,19 +43,6 @@ export default function ServicesPage() {
   return (
     <div className="bg-white dark:bg-black-100">
       <div className="container mx-auto px-4 py-16 md:py-24 dark:bg-black-100">
-        {/* <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-lg">
-            We provide comprehensive software development solutions to help
-            businesses thrive in the digital age. Our expertise spans across
-            various technologies and platforms.
-          </p>
-        </motion.div> */}
-
         <div className="flex justify-center relative my-10 z-10">
           <div className="max-w-[70vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
             <TextGenerateEffect
@@ -67,7 +54,6 @@ export default function ServicesPage() {
             </p>
           </div>
         </div>
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
