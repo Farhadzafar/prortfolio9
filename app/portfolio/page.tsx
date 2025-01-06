@@ -1,33 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa";
 import { PinContainer } from "@/components/ui/Pin";
-import Link from "next/link";
 import { projects } from "@/data";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+  visible: { y: 0, opacity: 1 },
 };
 
 export default function PortfolioPage() {
   return (
     <div className="bg-white dark:bg-black-100">
-      <div className="container mx-auto px-4 py-16 bg-white dark:bg-black-100">
+      <div className="container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +41,7 @@ export default function PortfolioPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap items-center justify-center gap-16 mt-10"
+          className="flex flex-wrap items-center justify-center gap-16"
         >
           {projects.map((item) => (
             <motion.div
@@ -73,52 +68,12 @@ export default function PortfolioPage() {
                       className="z-10 absolute bottom-0 w-40 h-40 object-cover rounded-full shadow-lg"
                     />
                   </div>
-
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-black dark:text-white">
+                  <h1 className="font-bold lg:text-2xl md:text-xl text-base text-black dark:text-white">
                     {item.title}
                   </h1>
-
-                  <p
-                    className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 text-muted-foreground mt-2 mb-4"
-                    style={{
-                      color: "#BEC1DD",
-                      margin: "1vh 0",
-                    }}
-                  >
+                  <p className="text-sm lg:text-lg text-muted-foreground mt-2">
                     {item.description}
                   </p>
-
-                  <div className="flex items-center justify-between mt-7 mb-3">
-                    <div className="flex items-center space-x-2">
-                      {item.iconLists.map((icon, index) => (
-                        <div
-                          key={index}
-                          className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                          style={{
-                            transform: `translateX(-${5 * index + 2}px)`,
-                          }}
-                        >
-                          <img
-                            src={icon}
-                            alt={`icon-${index}`}
-                            className="p-2"
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex justify-center items-center space-x-2">
-                      <a
-                        href={item.link}
-                        className="flex items-center gap-2 text-sm text-purple-500 hover:text-purple-700 transition-colors"
-                      >
-                        <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                          Check Live Site
-                        </p>
-                        <FaLocationArrow className="ms-3" color="#CBACF9" />
-                      </a>
-                    </div>
-                  </div>
                 </PinContainer>
               </Link>
             </motion.div>

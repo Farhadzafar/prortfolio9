@@ -48,7 +48,6 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white dark:bg-black-100">
-      {/* SpotlightPreview Component added here */}
       <Spotlight />
 
       <div className="mx-auto px-4 py-16 md:py-24">

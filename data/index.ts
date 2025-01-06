@@ -109,58 +109,13 @@ export const services = [
   {
     icon: Layout,
     title: "UI/UX Design",
-    imageSrc: "/images/ui-ux-design.jpg", // Add image URL here
+    imageSrc: "/images/backend-development.jpg", // Add image URL here
     description:
       "Beautiful and intuitive user interfaces that enhance user experience.",
     technologies: ["Figma", "Adobe XD", "Sketch"],
   },
 ];
 
-// export const services = [
-//   {
-//     icon: Globe2,
-//     title: "Web Development",
-//     imageSrc: "/images/web-development.jpg",
-//     description:
-//       "Custom web applications built with modern technologies like React, Next.js, and Node.js.",
-//     technologies: ["React", "Next.js", "Node.js", "TypeScript", "TailwindCSS"],
-//   },
-//   {
-//     icon: Smartphone,
-//     title: "Mobile Development",
-//     description:
-//       "Native and cross-platform mobile applications for iOS and Android.",
-//     technologies: ["React Native", "Flutter", "iOS", "Android", "PWA"],
-//   },
-//   {
-//     icon: Database,
-//     title: "Backend Development",
-//     description:
-//       "Scalable and secure backend solutions with modern architectures.",
-//     technologies: ["Node.js", "Python", "PostgreSQL", "MongoDB", "AWS"],
-//   },
-//   {
-//     icon: Code2,
-//     title: "Custom Software",
-//     description:
-//       "Tailored software solutions for your specific business needs.",
-//     technologies: ["Java", "C#", ".NET", "Python", "Microservices"],
-//   },
-//   {
-//     icon: Terminal,
-//     title: "DevOps Services",
-//     description:
-//       "Streamline your development and deployment processes specific business needs.",
-//     technologies: ["Docker", "Kubernetes", "CI/CD", "AWS", "Azure"],
-//   },
-//   {
-//     icon: Layout,
-//     title: "UI/UX Design",
-//     description:
-//       "Beautiful and intuitive user interfaces that enhance user experience.",
-//     technologies: ["Figma", "Adobe XD", "Sketch"],
-//   },
-// ];
 export const phases = [
   {
     phase: "PHASE ONE: DISCOVERY",

@@ -49,11 +49,11 @@ export const CardContainer = ({
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-8 flex items-center justify-center",
+          "py-30 flex items-center justify-center",
           containerClassName
         )}
         style={{
-          perspective: "8000px",
+          perspective: "1000px",
         }}
       >
         <div
