@@ -1,45 +1,37 @@
 "use client";
-import PhaseCard from "./phaseCard";
 import { CardContainer } from "@/components/ui/3d-card"; // Adjust the import path as necessary
 import { IndustriesSection } from "@/components/industries";
-import PhaseList from "./phaseList";
+
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { services, phases } from "@/data"; // Importing projects from data/index.ts
+import { services, phases } from "@/data";
 import { useI18n } from "@/lib/i18n";
 import { translations } from "@/lib/translations";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
-import { Cover } from "@/components/ui/cover";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/SpotLights";
 import { CardBody, CardItem } from "@/components/ui/3d-card"; // Adjust the import path as necessary
+import { Timeline } from "@/components/ui/timeline";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+// const containerVariants = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
+// const itemVariants = {
+//   hidden: { y: 20, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//   },
+// };
 
 export default function ServicesPage() {
   const { language } = useI18n();
@@ -108,7 +100,9 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-        <section className="container mx-auto px-4 py-16 md:py-24">
+
+        {/* /////////////////////////////////////////////////////////////////// */}
+        {/* <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
               <div className="lg:col-span-4">
@@ -125,7 +119,11 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+
+        <Timeline />
+
+        {/* ///////////////////////////////////////////////////////////////// */}
         <IndustriesSection />
       </div>
     </div>

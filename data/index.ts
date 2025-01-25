@@ -7,7 +7,16 @@ import {
   Terminal,
 } from "lucide-react";
 
+import {
+  Layers,
+  LineChart,
+  Lightbulb,
+  Code,
+  GraduationCap,
+} from "lucide-react";
+
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { list } from "postcss";
 
 export const projects = [
   {
@@ -116,11 +125,15 @@ export const services = [
   },
 ];
 
+// /////////////////////////////////////////////////////////////
+
 export const phases = [
   {
-    phase: "PHASE ONE: DISCOVERY",
-    title: "Understanding Your Vision",
-    description:
+    listTitle: "DISCOVERY",
+    icon: Lightbulb,
+    title: "PHASE ONE: DISCOVERY",
+    contentTitle: "Understanding Your Vision",
+    content:
       "We dive deep into your business needs and objectives to create a solid foundation for your project.",
     features: [
       {
@@ -140,9 +153,11 @@ export const phases = [
     ],
   },
   {
-    phase: "PHASE TWO: ESTIMATE",
-    title: "Project Scope & Timeline",
-    description:
+    listTitle: "ESTIMATE",
+    icon: LineChart,
+    title: "PHASE TWO: ESTIMATE",
+    contentTitle: "Project Scope & Timeline",
+    content:
       "Developing a comprehensive project plan with clear deliverables and timelines.",
     features: [
       {
@@ -163,9 +178,11 @@ export const phases = [
     ],
   },
   {
-    phase: "PHASE THREE: BLUEPRINT",
-    title: "Designing Your Solution",
-    description:
+    listTitle: "BLUEPRINT",
+    icon: Layers,
+    title: "PHASE THREE: BLUEPRINT",
+    contentTitle: "Designing Your Solution",
+    content:
       "Creating detailed technical specifications and architectural designs.",
     features: [
       {
@@ -184,9 +201,11 @@ export const phases = [
     ],
   },
   {
-    phase: "PHASE FOUR: ENGINEERING",
-    title: "Building Your Solution",
-    description:
+    listTitle: "ENGINEERING",
+    icon: Code,
+    title: "PHASE FOUR: ENGINEERING",
+    contentTitle: "Building Your Solution",
+    content:
       "Transforming designs into reality with cutting-edge development practices.",
     features: [
       {
@@ -205,9 +224,11 @@ export const phases = [
     ],
   },
   {
-    phase: "PHASE FIVE: TRAINING & SUPPORT",
-    title: "We facilitate seamless integration",
-    description:
+    listTitle: "TRAINING & SUPPORT",
+    icon: GraduationCap,
+    title: "PHASE FIVE: TRAINING & SUPPORT",
+    contentTitle: "We facilitate seamless integration",
+    content:
       "Training on the completed software, and we stick around to ensure your system works perfectly – now and in the future.",
     features: [
       {
@@ -228,7 +249,7 @@ export const phases = [
     ],
   },
 ];
-
+// //////////////////////////////////////////////////////////////////////
 export const gridItems = [
   {
     id: 1,
@@ -237,7 +258,7 @@ export const gridItems = [
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
+    titleClassName: "justify-end text-left dark:text-black text-white",
     img: "/b1.svg",
     spareImg: "",
   },
@@ -276,7 +297,7 @@ export const gridItems = [
   {
     id: 5,
     title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    description: "The Inside S",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -364,31 +385,17 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Custom Software Development",
+    desc: "From the straightforward to the never-before-seen, we have substantial experience in custom software development and a deep understanding of how businesses work, making us your perfect development partner.",
     className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
+    thumbnail: "/servise1.png",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Legacy Software Modernization",
+    desc: "We have substantial experience in modernizing legacy systems and a deep understanding of how businesses work, making us your perfect development partner.",
     className: "md:col-span-2",
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2",
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
+    thumbnail: "/servise2.png",
   },
 ];
 

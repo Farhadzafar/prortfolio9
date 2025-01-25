@@ -5,6 +5,8 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 
 import dynamic from "next/dynamic";
+import Fqa from "@/components/Fqa";
+import About from "@/components/About";
 
 const BrowserComponent = dynamic(() => import("@/components/Grid"), {
   ssr: false,
@@ -16,7 +18,9 @@ const Home = () => {
       <div className="max-w-7xl w-full bg-white dark:bg-black-100">
         <Hero />
         <BrowserComponent />
-        {/* <Experience /> */}
+        <Experience />
+        <About />
+        <Fqa />
       </div>
     </main>
   );

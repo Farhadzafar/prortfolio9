@@ -1,10 +1,10 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+
 import {
   Card,
   CardContent,
@@ -15,6 +15,21 @@ import {
 import { Send } from "lucide-react";
 import { useI18n } from "@/lib/i18n"; // Importing the useI18n hook
 import { translations } from "@/lib/translations"; // Importing the translations object
+
+// //////////////////////////////////////////
+import { SelectInput } from "../ui/slectInput";
+import UserContactInput from "./UserContactInput";
+
+const options1 = [
+  { value: "technology", label: "Technology" },
+  { value: "automotive", label: "Automotive" },
+  { value: "compliance", label: "Compliance" },
+  { value: "erp", label: "ERP" },
+  { value: "finance", label: "Finance" },
+  { value: "healthcare", label: "Healthcare" },
+  { value: "manufacturing", label: "Manufacturing" },
+];
+// ///////////////////////////////////////////
 
 export function ContactForm() {
   const { language } = useI18n(); // Using language from the i18n hook
@@ -47,7 +62,7 @@ export function ContactForm() {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid sm:grid-cols-2 gap-4">
+            {/* <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Input
                   placeholder={t.form.firstName}
@@ -62,20 +77,44 @@ export function ContactForm() {
                   className="bg-white dark:bg-black-100 text-black dark:text-white"
                 />
               </div>
-            </div>
+            </div> */}
+
             <div className="space-y-2">
               <Input
-                type="email"
-                placeholder={t.form.email}
+                placeholder={t.form.firstName}
                 required
                 className="bg-white dark:bg-black-100 text-black dark:text-white"
               />
             </div>
+
+            <div className="space-y-2">
+              <UserContactInput className="mb-4" />
+            </div>
+            <div className="space-y-2">
+              <SelectInput>
+                <option value="technology">Technology</option>
+                <option value="automotive">Automotive</option>
+                <option value="compliance">Compliance</option>
+                <option value="erp">ERP</option>
+                <option value="finance">Finance</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="technology">Technology</option>
+                <option value="automotive">Automotive</option>
+                <option value="compliance">Compliance</option>
+                <option value="technology">Technology</option>
+                <option value="automotive">Automotive</option>
+                <option value="compliance">Compliance</option>
+                <option value="erp">ERP</option>
+                <option value="finance">Finance</option>
+              </SelectInput>
+            </div>
+
             <div className="space-y-2">
               <Input
                 placeholder={t.form.subject}
                 required
-                className="bg-white dark:bg-black-100 text-black dark:text-white"
+                className="bg-white dark:bg-black-100 text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               />
             </div>
             <div className="space-y-2">
