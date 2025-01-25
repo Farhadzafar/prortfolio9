@@ -9,15 +9,11 @@ const About = () => {
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
-              <div className="flex items-center -mx-3 sm:-mx-4">
-                <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                  <img
-                    src="https://i.ibb.co/gFb3ns6/image-1.jpg"
-                    alt=""
-                    className="w-full rounded-2xl"
-                  />
-                </div>
-              </div>
+              <img
+                src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                alt=""
+                className="w-full rounded-2xl"
+              />
             </div>
 
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
